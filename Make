@@ -1,4 +1,4 @@
--R . chinese-lemma
+-R . Chinese
 rings.v
 misc.v
 groups.v
