@@ -29,33 +29,21 @@ Require Export Zadd.
 Definition leZ (x y : Z) :=
   match x return Prop with
   | OZ =>
-      (* OZ *) 
       match y return Prop with
-      | OZ =>
-          (* OZ *)  True
-          (* pos n *) 
+      | OZ => True
       | pos n => True
-          (* neg n *) 
       | neg n => False
       end
-      (* pos n *) 
   | pos n =>
       match y return Prop with
-      | OZ =>
-          (* OZ *)  False
-          (* pos m *) 
+      | OZ => False
       | pos m => n <= m
-          (* neg m *) 
       | neg m => False
       end
-      (* neg n *) 
   | neg n =>
       match y return Prop with
-      | OZ =>
-          (* OZ *)  True
-          (* pos m *) 
+      | OZ => True
       | pos m => True
-          (* neg m *) 
       | neg m => m <= n
       end
   end.
