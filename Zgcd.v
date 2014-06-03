@@ -23,6 +23,8 @@ Require Export Zrec.
 Require Export Zmult.
 Require Export Zdiv.
 
+Unset Standard Proposition Elimination Names.
+
 (***************************)
 Lemma gcd_unicity_apart_sign :
  forall a b d1 d2 : Z,

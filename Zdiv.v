@@ -20,6 +20,8 @@ Require Export Zmult.
 Require Export Zle.
 Require Export Euclid.
 
+Unset Standard Proposition Elimination Names.
+
 (********************)
 Definition is_diveuclZ (a b q r : Z) :=
   b <> OZ /\ leZ OZ r /\ ltZ r (absZ b) /\ a = addZ (multZ b q) r.
