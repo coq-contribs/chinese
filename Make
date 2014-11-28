@@ -14,12 +14,9 @@ Z.v
 Nat_complements.v
 Lci.v
 main.ml
-chinese.ml
 chinese.mli
--custom "$(COQBIN)coqtop $(COQLIBS) $(COQFLAGS) -silent -batch -load-vernac-source extract.v" Zgcd.vo chinese.ml
--custom "$(CAMLBIN)ocamlopt -o chinese chinese.mli chinese.ml main.ml" chinese.ml chinese
--custom   
-       "@echo '***** test: computing the chinese remaindering of an example  *****'
+-extra chinese.ml Zgcd.vo "$(COQBIN)coqtop $(COQLIBS) $(COQFLAGS) -silent -batch -load-vernac-source extract.v"
+-extra chinese chinese.ml "$(CAMLBIN)ocamlopt -o chinese chinese.mli chinese.ml main.ml"
+-extra test chinese "@echo '***** test: computing the chinese remaindering of an example  *****'
 	./chinese 9 16 3 7
 	@echo '*********************** End of test *******************************'"
-  "chinese" test 
