@@ -49,7 +49,7 @@ Proof.
   apply (divexZ (neg n0) (pos n) (negOZ q) OZ). split.
   discriminate. split. exact I. split. exact (le_O_n n).
   rewrite (add_OZ (multZ (pos n) (negOZ q))).
-  apply (tech_div2 n0 n q). rewrite e; rewrite e0; auto with v62.
+  apply (tech_div2 n0 n q). rewrite e; rewrite e0; auto with arith.
   apply (divexZ (neg n0) (pos n) (neg q) (pos (n - r))).
   split. discriminate. split. exact I. split.
   exact (lt_le_S (n - r) n (lt_minus n r (gt_S_le r n g) g0)).
@@ -65,7 +65,7 @@ Proof.
   apply (divexZ (neg n0) (neg n) (posOZ q) OZ). unfold is_diveuclZ in |- *.
   split. discriminate. split. exact I. split. exact (le_O_n n).
   rewrite (add_OZ (multZ (neg n) (posOZ q))). apply (tech_div5 n0 n q).
-  rewrite e; rewrite e0; auto with v62.
+  rewrite e; rewrite e0; auto with arith.
   apply (divexZ (neg n0) (neg n) (pos q) (pos (n - r))).
   split. discriminate. split. exact I. split.
   exact (lt_le_S (n - r) n (lt_minus n r (gt_S_le r n g) g0)).
