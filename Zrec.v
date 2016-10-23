@@ -68,25 +68,25 @@ Lemma Zrec3 :
 
 split.
 (* P (neg n) *)
-elim (lt_succ n p H1); intros. elim (H0 n a); intros; trivial with v62.
+elim (lt_succ n p H1); intros. elim (H0 n a); intros; trivial with arith.
 rewrite b. apply (H (neg (S p))).
 simple destruct m. intros; apply (Zrec1 P H).
 unfold lt_absZ in |- *; unfold absZ in |- *; unfold ltZ in |- *;
  unfold leZ in |- *; intros.
-elim (H0 n0); auto with v62.
+elim (H0 n0); auto with arith.
 unfold lt_absZ in |- *; unfold absZ in |- *; unfold ltZ in |- *;
  unfold leZ in |- *; intros.
-elim (H0 n0); auto with v62.
+elim (H0 n0); auto with arith.
 (* P (pos n) *)
-elim (lt_succ n p H1); intros. elim (H0 n); intros; trivial with v62.
+elim (lt_succ n p H1); intros. elim (H0 n); intros; trivial with arith.
 rewrite b. apply (H (pos (S p))).
 simple destruct m. intros; apply (Zrec1 P H).
 unfold lt_absZ in |- *; unfold absZ in |- *; unfold ltZ in |- *;
  unfold leZ in |- *; intros.
-elim (H0 n0); auto with v62.
+elim (H0 n0); auto with arith.
 unfold lt_absZ in |- *; unfold absZ in |- *; unfold ltZ in |- *;
  unfold leZ in |- *; intros.
-elim (H0 n0); auto with v62.
+elim (H0 n0); auto with arith.
 Qed.
 
 (*************)
@@ -97,7 +97,7 @@ Theorem Zrec4 :
 
 intros; elim p. 
 exact (Zrec2 P H). 
-intros; apply Zrec3; trivial with v62.
+intros; apply Zrec3; trivial with arith.
 Qed.
 
 (************)
@@ -111,10 +111,10 @@ intros; elim p.
 exact (Zrec1 P H).
 (* pos n *)
 intro n; cut (and_recZ n P). intros.
-elim (H0 n); auto with v62.
-apply Zrec4; trivial with v62.
+elim (H0 n); auto with arith.
+apply Zrec4; trivial with arith.
 (* neg n *)
 intro n; cut (and_recZ n P). intros.
-elim (H0 n); auto with v62.
-apply Zrec4; trivial with v62.
+elim (H0 n); auto with arith.
+apply Zrec4; trivial with arith.
 Qed.
